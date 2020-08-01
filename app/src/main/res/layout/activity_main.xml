@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="balance"
+            type="String" />
+        <variable
+            name="winX"
+            type="String" />
+        <variable
+            name="winAmount"
+            type="String" />
+        <variable
+            name="bet"
+            type="String" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/balanceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:fontFamily="sans-serif-black"
+            android:lineSpacingExtra="8sp"
+            android:text="@{balance}"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="64dp" />
+
+        <TextView
+            android:id="@+id/yourBalanceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="8sp"
+            android:text="Your balance:"
+            android:textColor="#000"
+            android:textSize="35sp"
+            android:typeface="normal"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/winXCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:lineSpacingExtra="8sp"
+            android:text="@{winX}"
+            android:textColor="#000"
+            android:textSize="72sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            app:layout_constraintBottom_toTopOf="@+id/winAmountTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yourBalanceTextView" />
+
+        <TextView
+            android:id="@+id/winAmountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:lineSpacingExtra="8sp"
+            android:text="@{winAmount}"
+            android:textColor="#000"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/winXCount" />
+
+        <EditText
+            android:id="@+id/betAmountEditText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:text="@{bet}"
+            android:fontFamily="sans-serif-black"
+            android:hint="Enter Bet"
+            android:inputType="number"
+            android:lineSpacingExtra="8sp"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/clrBetButton"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="247dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="325dp" />
+
+        <Button
+            android:id="@+id/IncreaseBet1Button"
+            style="@style/IncreaseBetButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="1"
+            app:layout_constraintBottom_toTopOf="@+id/IncreaseBet1KButton"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toStartOf="@+id/IncreaseBet10Button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+        <Button
+            android:id="@+id/IncreaseBet10Button"
+            style="@style/IncreaseBetButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="10"
+            app:layout_constraintBottom_toBottomOf="@+id/IncreaseBet1Button"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toStartOf="@+id/IncreaseBet100Button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/IncreaseBet1Button"
+            app:layout_constraintTop_toTopOf="@+id/IncreaseBet1Button" />
+
+        <Button
+            android:id="@+id/IncreaseBet100Button"
+            style="@style/IncreaseBetButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="100"
+            app:layout_constraintBottom_toBottomOf="@+id/IncreaseBet10Button"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/IncreaseBet10Button"
+            app:layout_constraintTop_toTopOf="@+id/IncreaseBet10Button" />
+
+        <Button
+            android:id="@+id/IncreaseBet1KButton"
+            style="@style/IncreaseBetButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="1k"
+            app:layout_constraintBottom_toTopOf="@+id/IncreaseBet1MButton"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toStartOf="@+id/IncreaseBet10KButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/IncreaseBet1Button" />
+
+        <Button
+            android:id="@+id/IncreaseBet10KButton"
+            style="@style/IncreaseBetButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="10k"
+            app:layout_constraintBottom_toBottomOf="@+id/IncreaseBet1KButton"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toStartOf="@+id/IncreaseBet100KButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/IncreaseBet1KButton"
+            app:layout_constraintTop_toTopOf="@+id/IncreaseBet1KButton" />
+
+        <Button
+            android:id="@+id/IncreaseBet100KButton"
+            style="@style/IncreaseBetButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="100k"
+            app:layout_constraintBottom_toBottomOf="@+id/IncreaseBet10KButton"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/IncreaseBet10KButton"
+            app:layout_constraintTop_toTopOf="@+id/IncreaseBet10KButton" />
+
+        <Button
+            android:id="@+id/IncreaseBet1MButton"
+            style="@style/IncreaseBetButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="1m"
+            app:layout_constraintBottom_toTopOf="@+id/playButton"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toStartOf="@+id/IncreaseBet10MButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/IncreaseBet1KButton" />
+
+        <Button
+            android:id="@+id/IncreaseBet100MButton"
+            style="@style/IncreaseBetButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="100M"
+            app:layout_constraintBottom_toBottomOf="@+id/IncreaseBet10MButton"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/IncreaseBet10MButton"
+            app:layout_constraintTop_toTopOf="@+id/IncreaseBet10MButton"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/IncreaseBet10MButton"
+            style="@style/IncreaseBetButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="10M"
+            app:layout_constraintBottom_toBottomOf="@+id/IncreaseBet1MButton"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toStartOf="@+id/IncreaseBet100MButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/IncreaseBet1MButton"
+            app:layout_constraintTop_toTopOf="@+id/IncreaseBet1MButton" />
+
+        <Button
+            android:id="@+id/playButton"
+            style="@style/IncreaseBetButton"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            style="@style/IncreaseBetButton"
+            android:id="@+id/clrBetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="CLR"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="0.266" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
