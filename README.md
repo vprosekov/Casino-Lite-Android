@@ -20,5 +20,8 @@ Simple android casino app with sharedPrefs. Can you become quintillionaire?
   <img src="/casino3.png" width="300" />
 </p>
 
+License
+----
+MIT License
 
 **hello world:)**
